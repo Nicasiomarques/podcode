@@ -1,8 +1,7 @@
-import { getCurrentDate } from '../../utils'
+import { currentDate } from '../../utils'
 import styles from './styles.module.scss'
 
 export default function Header() {
-  const currentDate = getCurrentDate();
   return (
     <header className={styles.header}>
       <img src="/logo.svg" alt="Codecast" />
