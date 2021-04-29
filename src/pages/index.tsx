@@ -1,11 +1,12 @@
+import { useContext } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { GetStaticProps } from "next"
-import { useRouter } from "next/router"
 
 import styles from './styles.module.scss'
 import { getEpisodes } from "../services/Api"
 import { calculateRevalidateInHours } from "../utils"
+import { PlayerContext } from "../contexts/Player"
 
 interface Episode {
   id: string;
@@ -24,7 +25,7 @@ interface HomeProps {
 }
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
-  const router = useRouter()
+  const { play } = useContext(PlayerContext);
 
   return (
     <div className={styles.homePage}>
@@ -52,7 +53,11 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
               </div>
 
               <button type="button">
-                <img src="/play-green.svg" alt="Tocar episodio" />
+                <img
+                  onClick={() => play(episode)}
+                  src="/play-green.svg"
+                  alt="Tocar episodio"
+                />
               </button>
             </li>
           )))}
@@ -95,7 +100,11 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                 <td>{episode.durationAsString}</td>
                 <td>
                   <button>
-                    <img src="/play-green.svg" alt="Tocar episodio" />
+                    <img
+                      onClick={() => play(episode)}
+                      src="/play-green.svg"
+                      alt="Tocar episodio"
+                    />
                   </button>
                 </td>
               </tr>

@@ -8,7 +8,11 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <Link href='/'>
-        <img src="/logo.svg" alt="Codecast" />
+        <img
+          style={{ cursor: 'pointer' }}
+          src="/logo.svg"
+          alt="Codecast"
+        />
       </Link>
 
       <p>O melhor podcast dev</p>
