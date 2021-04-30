@@ -9,14 +9,16 @@ import styles from './styles.module.scss'
 export default function Player() {
   const {
     currentEpisodeIndex,
+    setPlayingState,
+    playPrevious,
     episodeList,
+    hasPrevious,
+    toggleLoop,
     togglePlay,
     isPlaying,
-    setPlayingState,
+    isLooping,
     playNext,
-    playPrevious,
     hasNext,
-    hasPrevious,
   } = usePlayer();
   const episode = episodeList[currentEpisodeIndex];
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -68,8 +70,9 @@ export default function Player() {
 
         {episode && (
           <audio
-            src={episode.url}
             ref={audioRef}
+            src={episode.url}
+            loop={isLooping}
             autoPlay
             onPlay={() => setPlayingState(true)}
             onPause={() => setPlayingState(false)}
@@ -99,7 +102,12 @@ export default function Player() {
             <img src="/play-next.svg" alt="Tocar proxima" />
           </button>
 
-          <button type="button" disabled={!episode}>
+          <button
+            className={isLooping ? styles.isActive : ''}
+            onClick={toggleLoop}
+            disabled={!episode}
+            type="button"
+          >
             <img src="/repeat.svg" alt="Repetir" />
           </button>
         </div>

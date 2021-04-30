@@ -12,8 +12,10 @@ export interface PlayerContextData {
   isPlaying: boolean;
   hasPrevious: boolean;
   hasNext: boolean;
+  isLooping: boolean;
   play: (episode: Episode) => void;
   togglePlay: () => void;
+  toggleLoop: () => void;
   setPlayingState: (state: boolean) => void;
   playList: (list: Episode[], index: number) => void;
   playNext: () => void;
