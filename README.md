@@ -2,11 +2,9 @@
 
 ![](.Github/readme/app.png)
 
-<p>🚧<b>This aplication is still under development</b>🚧</p>
-
 <br>
 
-# 🙋 How can I use?
+# 🚀 Installation
 
 **The application makes use of a fake API to be able to receive the podcast episodes in order to start it, the restive commands to be able to start the application are below👷👷.**
 
@@ -14,24 +12,19 @@
 
 **To be able to run the commands below, make sure who has installed nodejs + npm, otherwise the commands below will be of no use.**
 
-> Clone the repository and change to project path:
+```bash
+#Clone the repository and change to project path:
+$ git clone https://github.com/Nicasiomarques/podcode && cd podcode
 
-> `git clone https://github.com/Nicasiomarques/podcode && cd podcode`
+# Install the dependencies
+$ npm install
 
-> Install dependencies:
+# Run the backend fake server
+$ npm run server
 
-> `npm install` or
-> `yarn install`
-
-> Run fake API:
-
-> `npm run server` or
-> `yarn server`
-
-> Run Application in development mode:
-
-> `npm run dev` or
-> `yarn dev`
+# Run Application in development mode
+$ npm run dev
+```
 
 > ## App constitution
 
@@ -63,6 +56,16 @@
 
 **You can visit this webapp**:
 &nbsp; <a target="_blank" href="#">here</a>.
+
+## 📫 Contribution
+
+To contribute to <project_name>, follow these steps:
+
+1. Fork this repository.
+2. Create a branch: `git checkout -b <_name_branch>`.
+3. Make your changes and confirm them: `git commit -m '<mensagem_commit>'`
+4. Send to the original branch: `git push origin <project_name> / <local>`
+5. Create the pull request.
 
 > ## Built With ⚒ ?
 >
