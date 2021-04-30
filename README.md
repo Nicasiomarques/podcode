@@ -2,7 +2,7 @@
   <img src="https://user-images.githubusercontent.com/16815826/116719093-9603f480-a9d2-11eb-94c6-8ea133a45c84.png" alt="logo"/> &nbsp;
   
   # Podcast Platform
-<div/>
+</div>
 
 <br>
 
