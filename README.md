@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Podcast Platform 🎙🎙🎙
 
-## Getting Started
+![](.Github/readme/app.png)
 
-First, run the development server:
+<p>🚧<b>This aplication is still under development</b>🚧</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 🙋 How can I use?
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+**The application makes use of a fake API to be able to receive the podcast episodes in order to start it, the restive commands to be able to start the application are below👷👷.**
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 🙅 ATTENTION:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+**To be able to run the commands below, make sure who has installed nodejs + npm, otherwise the commands below will be of no use.**
 
-## Learn More
+> Clone the repository and change to project path:
 
-To learn more about Next.js, take a look at the following resources:
+> `git clone https://github.com/Nicasiomarques/podcode && cd podcode`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> Install dependencies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+> `npm install` or
+> `yarn install`
 
-## Deploy on Vercel
+> Run fake API:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> `npm run server` or
+> `yarn server`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> Run Application in development mode:
+
+> `npm run dev` or
+> `yarn dev`
+
+> ## App constitution
+
+> Components
+>
+> 1. **Header**
+> 2. **Player** <br/>
+
+> Pages
+>
+> 1. **Home**
+> 2. **Episode**
+
+<br />
+
+# Player ℹ️
+
+**The player already supports the following features.**
+
+> ## Features 😎
+>
+> - **Player** - Plays only one song
+> - **Pause** - Pause the current song
+> - **Next** - Go to the next song
+> - **shuffle** - Make music choice random
+> - **Play List** - Plays a complete list of songs
+> - **Replay** - Repeat the same song that deactivates
+> - **Reset Player** - Returns to the initial state
+
+**You can visit this webapp**:
+&nbsp; <a target="_blank" href="#">here</a>.
+
+> ## Built With ⚒ ?
+>
+> **I went a little bit old fashion while building this app, but used some pretty new and cool web technologies.**
+>
+> 1. **NEXTJS** (REACTJS)
+> 2. **SASS** (CSS)
+> 3. **Typescript** (Javascript) <br />
