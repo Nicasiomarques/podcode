@@ -26,6 +26,8 @@ $ npm run server
 $ npm run dev
 ```
 
+The app will be available for access on your browser at `http://localhost:3000`
+
 > ## App constitution
 
 > Components
@@ -69,8 +71,10 @@ To contribute to <project_name>, follow these steps:
 
 > ## Built With ⚒ ?
 >
-> **I went a little bit old fashion while building this app, but used some pretty new and cool web technologies.**
+> **Technologies:**
 >
 > 1. **NEXTJS** (REACTJS)
 > 2. **SASS** (CSS)
 > 3. **Typescript** (Javascript) <br />
+
+Made with 💜 by Nicasio Marques 👋 [Check out my LinkedIn](https://www.linkedin.com/in/nicasio-marques-70320a182/)
