@@ -1,6 +1,8 @@
-# Podcast Platform 🎙🎙🎙
-
-![](.Github/readme/app.png)
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/16815826/116719093-9603f480-a9d2-11eb-94c6-8ea133a45c84.png" alt="logo"/> &nbsp;
+  
+  # Podcast Platform
+<div/>
 
 <br>
 
@@ -30,15 +32,25 @@ The app will be available for access on your browser at `http://localhost:3000`
 
 > ## App constitution
 
-> Components
->
-> 1. **Header**
-> 2. **Player** <br/>
+**Components**
 
-> Pages
->
-> 1. **Home**
-> 2. **Episode**
+***Header***
+![header](https://user-images.githubusercontent.com/16815826/116720335-f6476600-a9d3-11eb-84e7-b369ad97f304.png) 
+
+***Player*** <br/>
+
+![player](https://user-images.githubusercontent.com/16815826/116720964-afa63b80-a9d4-11eb-89ad-dacb7e1c2b91.png)
+
+<br/>
+
+**Pages**
+
+***Home*** 
+![home-page](https://user-images.githubusercontent.com/16815826/116723439-758a6900-a9d7-11eb-87f5-1a829a8c0257.png) <br/>
+
+**Episode** <br/>
+![home-page](https://user-images.githubusercontent.com/16815826/116722746-b5048580-a9d6-11eb-907b-3177763370f5.png)
+
 
 <br />
 
