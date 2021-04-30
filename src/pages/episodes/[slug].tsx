@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import Link from 'next/link'
 import Image from "next/image"
 import { GetStaticPaths, GetStaticProps } from 'next'
@@ -6,10 +5,10 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { EpisodeProps } from './episodes.types'
 import { getEpisode } from '../../services/Api'
 import styles from './style.module.scss';
-import { PlayerContext } from '../../contexts/Player'
+import { usePlayer } from '../../contexts/Player'
 
 export default function Episode({ episode }: EpisodeProps) {
-  const { play } = useContext(PlayerContext);
+  const { play } = usePlayer();
 
   return (
     <div className={styles.episode}>
@@ -58,7 +57,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const episode = await getEpisode(slug as string);
-
   return {
     props: { episode }
   }
