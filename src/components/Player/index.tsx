@@ -10,9 +10,11 @@ export default function Player() {
   const {
     currentEpisodeIndex,
     setPlayingState,
+    toggleShuffle,
     playPrevious,
     episodeList,
     hasPrevious,
+    isShuffling,
     toggleLoop,
     togglePlay,
     isPlaying,
@@ -80,11 +82,19 @@ export default function Player() {
         )}
 
         <div className={styles.player__buttons}>
-          <button type="button" disabled={!episode}>
+          <button
+            onClick={toggleShuffle}
+            className={isShuffling ? styles.isActive : ''}
+            type="button" disabled={!episode}
+          >
             <img src="/shuffle.svg" alt="Tocar aleatoria" />
           </button>
 
-          <button onClick={playPrevious} type="button" disabled={!episode || !hasPrevious}>
+          <button
+            onClick={playPrevious}
+            type="button"
+            disabled={!episode || !hasPrevious}
+          >
             <img src="/play-previous.svg" alt="Tocar anterior" />
           </button>
 
@@ -98,7 +108,11 @@ export default function Player() {
               : <img src="/play.svg" alt="Tocar" />}
           </button>
 
-          <button onClick={playNext} type="button" disabled={!episode || !hasNext}>
+          <button
+            onClick={playNext}
+            type="button"
+            disabled={!episode || !hasNext}
+          >
             <img src="/play-next.svg" alt="Tocar proxima" />
           </button>
 
