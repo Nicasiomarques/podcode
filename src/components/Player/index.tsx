@@ -34,6 +34,11 @@ export default function Player() {
     });
   }
 
+  const handleSeek = (amount: number) => {
+    audioRef.current.currentTime = amount;
+    setProgress(amount);
+  }
+
   useEffect(() => {
     if (!audioRef.current) return;
     if (isPlaying) audioRef.current.play();
@@ -71,6 +76,7 @@ export default function Player() {
             (<Slider
               value={progress}
               max={episode.duration}
+              onChange={handleSeek}
               trackStyle={{ backgroundColor: '#84d361' }}
               railStyle={{ backgroundColor: '#9f75ff' }}
               handleStyle={{ borderColor: '#84d361', borderWidth: 4 }}
