@@ -6,7 +6,7 @@ export interface GetEpisodeResponse {
   description: string;
   file: {
     url: string;
-    duration: string;
+    duration: number;
   };
   published_at: string;
 }

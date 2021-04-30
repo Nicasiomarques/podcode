@@ -1,5 +1,5 @@
 import axios from "axios";
-import { convertDurationsToTimeString, formatPublishedAt } from "../utils";
+import { formatDuration, formatPublishedAt } from "../utils";
 import { GetEpisodeResponse, GetEpisodesResponse } from "./Api.types";
 
 export const api = axios.create({ baseURL: "http://localhost:8000" });
@@ -21,7 +21,7 @@ export const getEpisodes = async () => {
     url: episode.file.url,
     duration: Number(episode.file.duration),
     publishedAt: formatPublishedAt(episode.published_at),
-    durationAsString: convertDurationsToTimeString(episode.file.duration),
+    durationAsString: formatDuration(episode.file.duration),
   }));
 
   const latestEpisodes = episodes.slice(0, 2);
@@ -45,7 +45,7 @@ export const getEpisode = async (slug: string) => {
     url: data.file.url,
     duration: Number(data.file.duration),
     publishedAt: formatPublishedAt(data.published_at),
-    durationAsString: convertDurationsToTimeString(data.file.duration),
+    durationAsString: formatDuration(data.file.duration),
   };
 
   return episode;

@@ -11,7 +11,7 @@ export const currentDate = format(new Date(), "EEEEEE, d MMMM", {
 
 export const calculateRevalidateInHours = (hours: number) => 60 * 60 * hours;
 
-export const convertDurationsToTimeString = (time: string) => {
+export const formatDuration = (time: number) => {
   const duration = Number(time);
   const hours = Math.floor(duration / 3600);
   const minutes = Math.floor((duration % 3600) / 60);

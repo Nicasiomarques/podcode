@@ -1,10 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 
 import { usePlayer } from '../../contexts/Player'
 import styles from './styles.module.scss'
+import { formatDuration } from '../../utils'
 
 export default function Player() {
   const {
@@ -24,6 +25,14 @@ export default function Player() {
   } = usePlayer();
   const episode = episodeList[currentEpisodeIndex];
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  const setupProgressListener = () => {
+    audioRef.current.currentTime = 0;
+    audioRef.current.addEventListener('timeupdate', () => {
+      setProgress(Math.floor(audioRef.current.currentTime))
+    });
+  }
 
   useEffect(() => {
     if (!audioRef.current) return;
@@ -57,9 +66,11 @@ export default function Player() {
 
       <footer>
         <div className={styles.player__progress}>
-          <span>00:00</span>
+          <span>{formatDuration(Math.floor(progress))}</span>
           {episode ?
             (<Slider
+              value={progress}
+              max={episode.duration}
               trackStyle={{ backgroundColor: '#84d361' }}
               railStyle={{ backgroundColor: '#9f75ff' }}
               handleStyle={{ borderColor: '#84d361', borderWidth: 4 }}
@@ -67,7 +78,9 @@ export default function Player() {
             :
             (<div className={styles['player__slider--empty']} />)
           }
-          <span>00:00</span>
+          <span>
+            {formatDuration(episode?.duration ?? 0)}
+          </span>
         </div>
 
         {episode && (
@@ -78,6 +91,7 @@ export default function Player() {
             autoPlay
             onPlay={() => setPlayingState(true)}
             onPause={() => setPlayingState(false)}
+            onLoadedMetadata={setupProgressListener}
           />
         )}
 
