@@ -1,7 +1,7 @@
 import { createContext, FC, useContext, useState } from "react";
 import { Episode, PlayerContextData } from "./Player.types";
 
-export const PlayerContext = createContext({} as PlayerContextData);
+const PlayerContext = createContext({} as PlayerContextData);
 
 export const PlayerContextProvider: FC = ({ children }) => {
   const [episodeList, setEpisodeList] = useState([]);
