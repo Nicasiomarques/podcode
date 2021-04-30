@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from "next/image"
 import { GetStaticPaths, GetStaticProps } from 'next'
+import Head from 'next/head'
 
 import { EpisodeProps } from './episodes.types'
 import { getEpisode } from '../../services/Api'
@@ -12,6 +13,9 @@ export default function Episode({ episode }: EpisodeProps) {
 
   return (
     <div className={styles.episode}>
+      <Head>
+        <title>{episode.title} | CodeCast</title>
+      </Head>
       <div className={styles.thumbnailContainer}>
         <Link href='/'>
           <button type="button">

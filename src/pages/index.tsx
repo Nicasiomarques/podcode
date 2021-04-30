@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { GetStaticProps } from "next"
+import Head from "next/head"
 
 import styles from './styles.module.scss'
 import { getEpisodes } from "../services/Api"
@@ -29,6 +30,9 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
 
   return (
     <div className={styles.homePage}>
+      <Head>
+        <title>Home | CodeCast</title>
+      </Head>
       <section className={styles.latestEpisodes}>
         <h2>Ultimos lançamentos</h2>
 
