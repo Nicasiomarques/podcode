@@ -14,6 +14,7 @@ export default function Player() {
     toggleShuffle,
     playPrevious,
     episodeList,
+    resetPlayer,
     hasPrevious,
     isShuffling,
     toggleLoop,
@@ -32,6 +33,10 @@ export default function Player() {
     audioRef.current.addEventListener('timeupdate', () => {
       setProgress(Math.floor(audioRef.current.currentTime))
     });
+  }
+
+  function handleEpisodeEnded() {
+    hasNext ? playNext() : resetPlayer();
   }
 
   const handleSeek = (amount: number) => {
@@ -98,6 +103,7 @@ export default function Player() {
             onPlay={() => setPlayingState(true)}
             onPause={() => setPlayingState(false)}
             onLoadedMetadata={setupProgressListener}
+            onEnded={handleEpisodeEnded}
           />
         )}
 

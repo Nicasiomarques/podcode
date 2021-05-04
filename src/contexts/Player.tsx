@@ -56,6 +56,12 @@ export const PlayerContextProvider: FC = ({ children }) => {
     }
   }
 
+  function resetPlayer() {
+    setEpisodeList([]);
+    setCurrentEpisodeIndex(0);
+    setIsPlaying(false);
+  }
+
   return (
     <PlayerContext.Provider
       value={{
@@ -63,6 +69,7 @@ export const PlayerContextProvider: FC = ({ children }) => {
         setPlayingState,
         toggleShuffle,
         playPrevious,
+        resetPlayer,
         isShuffling,
         episodeList,
         hasPrevious,
