@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "server": "json-server server.json -w -d 600 -p 8000",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
