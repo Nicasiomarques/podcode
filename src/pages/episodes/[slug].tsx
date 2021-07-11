@@ -3,7 +3,6 @@ import Image from "next/image"
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import { EpisodeProps } from './episodes.types'
 import { getEpisode } from '../../services/Api'
 import styles from './style.module.scss';
 import { usePlayer } from '../../contexts/Player'
