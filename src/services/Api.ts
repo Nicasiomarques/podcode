@@ -2,7 +2,7 @@ import axios from "axios";
 import { formatDuration, formatPublishedAt } from "../utils";
 import { GetEpisodeResponse, GetEpisodesResponse } from "./Api.types";
 
-export const api = axios.create({ baseURL: "http://localhost:8000" });
+export const api = axios.create({ baseURL: `${process.env.SERVER_URL}` });
 
 export const getEpisodes = async () => {
   try {
